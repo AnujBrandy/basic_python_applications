@@ -3,6 +3,9 @@ import re
 import os
 import webbrowser
 class Movie( ) :
+	'''This is class for the movie template'''
+	VALID_RATINGS = ["L", "M", "H"]
+
 	def __init__( self, movie_name, movie_storyline, movie_poster_url, movie_trailer_url) :
 		#self.self = "hello"
 		self.movie_name_object = movie_name
@@ -13,8 +16,13 @@ class Movie( ) :
 	def show_trailer( self ) :
 		webbrowser.open( self.movie_trailer_url_object )
 
+
 movie_instance = Movie( "Avatar", "A paraplegic marine dispatched to the moon Pandora on a unique mission becomes torn between following his orders and protecting the world he feels is his home.","https://upload.wikimedia.org/wikipedia/en/b/b0/Avatar-Teaser-Poster.jpg" , "https://www.youtube.com/watch?v=5PSNL1qE6VY")
 movies = [ movie_instance ]
+print Movie.VALID_RATINGS
+print Movie.__doc__
+print Movie.__name__
+print Movie.__module__
 # Styles and scripting for the page
 main_page_head = '''
 	<!DOCTYPE html>
@@ -163,6 +171,6 @@ def open_movies_page( movies ) :
 	webbrowser.open( 'file://' + url, new=2 )
 
 
-open_movies_page( movies )
+#open_movies_page( movies )
 
 
